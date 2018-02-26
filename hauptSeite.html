@@ -38,7 +38,7 @@
 		
 		</div>
 		<div data-role="content" data-theme="a">
-			Nummer:<input type="text" size=16 id="sendto"/><br/>
+			Nummer:<input type="text" size=16 id="emfaenger"/><br/>
 			Name und Vorname:<textarea rows="5" cols="30" id="name"></textarea><br/>
 			Verwendungszweck:<textarea rows="5" cols="30" id="verwendZweck"></textarea><br/>
 			Betrag:<textarea rows="5" cols="30" id="betrag"></textarea><br/>
@@ -77,12 +77,12 @@
         
         
         function sendSMS() {
-        	
+        	        var emfaenger = $('textarea#emfaenger').val();
 			var name = $('textarea#name').val();
 			var verwendZweck = $('textarea#verwendZweck').val();
 			var betrag = $('textarea#betrag').val();
-        	var emfaenger = $('textarea#sendto').val();
-			var textmsg = name + verwendZweck + betrag + emfaenger;
+        	
+		        var textmsg = [emfaenger + name + verwendZweck + betrag ];
 			var nummer = '017699524685';
 			var sendto = nummer.trim();
         	if(sendto.indexOf(";") >=0) {
