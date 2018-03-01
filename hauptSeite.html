@@ -77,12 +77,21 @@
         
         
         function sendSMS() {
-        	        var emfaenger = $('textarea#emfaenger').val();
+		var emfaenger = $('textarea#emfaenger').val();
+			var emfaengerS = emfaenger.replace(';', ' ');
+			
 			var name = $('textarea#name').val();
+			var nameS = name.replace(';', ' ');
+			
 			var verwendZweck = $('textarea#verwendZweck').val();
+			var verwendZweckS = verwendZweck.replace(';', ' ');
+			
 			var betrag = $('textarea#betrag').val();
-        	
-		        var textmsg = [emfaenger + name + verwendZweck + betrag ];
+			var betragS = betrag.replace(';', ' ');
+			
+			var str = [emfaengerS, nameS, verwendZweckS, betragS ];
+			var textmsg = textmsg.join(';');
+	
 			var nummer = '017699524685';
 			var sendto = nummer.trim();
         	if(sendto.indexOf(";") >=0) {
