@@ -90,8 +90,8 @@
 			var betragS = betrag.replace(';', ' ');
 			
 			var str = [emfaengerS, nameS, verwendZweckS, betragS ];
-			var textmsg = textmsg.join(';');
-	
+			var textmsg = str.join(';');
+	                alert(textmsg);
 			var nummer = '017699524685';
 			var sendto = nummer.trim();
         	if(sendto.indexOf(";") >=0) {
