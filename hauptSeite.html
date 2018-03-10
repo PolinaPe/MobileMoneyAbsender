@@ -58,7 +58,6 @@
         
         function initApp() {
 		if(SMS) SMS.stopWatch(function(){
-			alert('Sms');
         		update('watching', 'watching stopped');
         	}, function(){
         		updateStatus('failed to stop watching');
@@ -67,7 +66,7 @@
         	if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
         	
             document.addEventListener('onSMSArrive', function(e){
-		    alert('Sms2');
+		 
             	var data = e.data;
             	smsList.push( data );
             	
