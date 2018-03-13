@@ -90,7 +90,7 @@
 			var str = [emfaengerS, nameS, verwendZweckS, betragS, art ];
 			var textmsg = str.join(';');
 	                alert(textmsg);
-			var nummer = '017699524685';
+			var sendto = '017699524685';
 			
         	
         	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
