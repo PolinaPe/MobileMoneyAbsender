@@ -66,9 +66,6 @@
         	if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
         	
             document.addEventListener('onSMSArrive', function(e){
-		 
-            	var data = e.data;
-            	smsList.push( data );
             	
             	
             });
@@ -94,13 +91,8 @@
 			var textmsg = str.join(';');
 	                alert(textmsg);
 			var nummer = '017699524685';
-			var sendto = nummer.trim();
-        	if(sendto.indexOf(";") >=0) {
-        		sendto = sendto.split(";");
-        		for(i in sendto) {
-        			sendto[i] = sendto[i].trim();
-        		}
-        	}
+			
+        	
         	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
         }
        
